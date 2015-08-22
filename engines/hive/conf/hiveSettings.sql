@@ -40,6 +40,7 @@ set bigbench.hive.optimize.sampling.orderby.percent=0.1;
 -- the following two parameters are most effective in influencing hives estimation of mappers. To low settings may result in to many map tasks, while to high size settings result in to few map tasks and underutilization of the cluster.
 -- both extremes are harmful to the performance. For small data set sizes of 1-100GB a good value  for max.split.size may be 134217728 (128MB). As an estimation, take a medium sized table and divide its size by the number of map tasks you need to utilize your cluster.
 
+set mapred.max.split.size=134217728;
 -- set mapreduce.input.fileinputformat.split.minsize=1048576;
 -- set mapreduce.input.fileinputformat.split.maxsize=67108864;
 
