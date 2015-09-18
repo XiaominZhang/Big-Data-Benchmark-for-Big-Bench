@@ -91,10 +91,10 @@ runModule () {
       snakebite rm -R -S "${TEMP_DIR}"
 
       echo " snakebite mkdirp ${RESULT_DIR}"
-      snakebite mkdirp "${RESULT_DIR}"
+      #snakebite mkdirp "${RESULT_DIR}"
 
       echo " snakebite mkdirp ${TEMP_DIR}"
-      snakebite mkdirp "${TEMP_DIR}"
+      #snakebite mkdirp "${TEMP_DIR}"
 
       echo " snakebite mkdirp ${BIG_BENCH_HDFS_ABSOLUTE_TEMP_DIR}"
       snakebite mkdirp "${BIG_BENCH_HDFS_ABSOLUTE_TEMP_DIR}"
@@ -109,21 +109,21 @@ runModule () {
       snakebite chmod 0777 "${BIG_BENCH_HDFS_ABSOLUTE_QUERY_RESULT_DIR}"
 
       echo " snakebite chmod 0777 ${RESULT_DIR}"
-      snakebite chmod 0777 "${RESULT_DIR}"
+      #snakebite chmod 0777 "${RESULT_DIR}"
 
       echo " snakebite chmod 0777 ${TEMP_DIR}"
-      snakebite chmod 0777 "${TEMP_DIR}"
+      #snakebite chmod 0777 "${TEMP_DIR}"
 
     else
       echo "hdfs client: hadoop fs"
        hadoop fs -rm -r -f -skipTrash "${RESULT_DIR}"
        hadoop fs -rm -r -f -skipTrash "${TEMP_DIR}"
-       hadoop fs -mkdir -p "${RESULT_DIR}"
-       hadoop fs -mkdir -p "${TEMP_DIR}"
+       #hadoop fs -mkdir -p "${RESULT_DIR}"
+       #hadoop fs -mkdir -p "${TEMP_DIR}"
        hadoop fs -chmod ugo+rwx "${BIG_BENCH_HDFS_ABSOLUTE_TEMP_DIR}"
        hadoop fs -chmod ugo+rwx "${BIG_BENCH_HDFS_ABSOLUTE_QUERY_RESULT_DIR}"
-       hadoop fs -chmod ugo+rwx "${RESULT_DIR}"
-       hadoop fs -chmod ugo+rwx "${TEMP_DIR}"
+       #hadoop fs -chmod ugo+rwx "${RESULT_DIR}"
+       #hadoop fs -chmod ugo+rwx "${TEMP_DIR}"
     fi
 
     local STOPDATE2="`date +%Y/%m/%d:%H:%M:%S`"
